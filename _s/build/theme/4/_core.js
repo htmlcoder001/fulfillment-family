@@ -631,7 +631,7 @@
       const i = new FormData;
       i.append("file", e);
       const o = $.ajax({
-        url: "/mod/file/lead/upload/",
+        url: "",
         type: t.type || t.method || "POST",
         dataType: "json",
         processData: !1,
@@ -710,7 +710,7 @@
         const e = window.getCookie("f_uid") || se.u_id;
         e ? (se.u_id = e, async function () {
           try {
-            const e = await Z("/mod/stat/visit/", {
+            const e = await Z("", {
               data: {
                 s_id: flexbe_cli.s_id,
                 group_id: flexbe_cli.group_id,
@@ -724,7 +724,7 @@
           }
         }()) : async function () {
           try {
-            const e = await Z("/mod/stat/", {
+            const e = await Z("", {
               data: {
                 s_id: flexbe_cli.s_id,
                 group_id: flexbe_cli.group_id,
@@ -842,7 +842,7 @@
         if (null == this.getCookie().view[e] && !this.proccess[e]) {
           this.proccess[e] = !0;
           try {
-            await Z("/mod/stat/abtest/", {data: {testId: e, variant: t, s_id: flexbe_cli.s_id, p_id: flexbe_cli.p_id}});
+            await Z("", {data: {testId: e, variant: t, s_id: flexbe_cli.s_id, p_id: flexbe_cli.p_id}});
             const i = this.getCookie();
             i.view[e] = t, this.setCookie(i)
           } catch (e) {
@@ -894,7 +894,7 @@
           })
         }
 
-        o && i ? r = "/mod/quiz/stat/save/composite/" : i ? r = "/mod/quiz/stat/save/answer/" : o && (r = "/mod/quiz/stat/save/view/"), r && (se.u_id ? a() : p.one("user_created", (() => {
+        o && i ? r = "" : i ? r = "" : o && (r = ""), r && (se.u_id ? a() : p.one("user_created", (() => {
           a()
         })))
       }
