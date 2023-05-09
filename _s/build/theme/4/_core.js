@@ -194,17 +194,19 @@
     const {id: s, ext: n} = e;
     if (!s) return "";
     t || "webp" !== e.ext || i.webp_support || (t = Math.min(e.width || m, m));
-    const r = null != (o = e.animated) ? o : "gif" === n, a = `/img/${s}.${n}`;
+    //const r = null != (o = e.animated) ? o : "gif" === n, a = `/img/${s}.${n}`;
+    const r = null != (o = e.animated) ? o : "gif" === n, a = `/img/${s}.png`;
     if (!t || r || "svg" === n) return a;
     const l = v(e, i), c = i.slow_network && I();
     let d = i.quality_map;
     switch (c && (d = {jpg: 50, webp: 50, avif: 45}), l) {
       case"png":
         return `/img/${s}_${t}.png`;
-      case"avif":
       case"webp":
       case"jpg":
-        return `/img/${s}_${t}_q${d[l]}.${l}`;
+        //return `/img/${s}_${t}_q${d[l]}.${l}`;
+      case"avif":
+        return `/img/${s}_${t}_q${d[l]}.png`;
       case"gif":
       default:
         return a
